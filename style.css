@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #fce4ec, #f3e5f5);
+  background-image: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-attachment: fixed;
+  color: #222;
+}
+
+header {
+  background: rgba(255, 255, 255, 0.92);
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding-bottom: 20px;
+}
+
+header img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+header h1 {
+  font-size: 40px;
+  color: #6a1b9a;
+  margin: 20px 0 15px;
+  text-shadow: 1px 1px 1px #ccc;
+  animation: fadeInDown 1s ease-out;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  background: #8e24aa;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  background: #6a1b9a;
+}
+
+main {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.94);
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+  transform: translateY(20px);
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.fade-in {
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.slide-up {
+  animation: slideUp 1.2s ease-out forwards;
+}
+
+.pop-in {
+  animation: popIn 1.2s ease-out forwards;
+}
+
+.card h2 {
+  color: #00796b;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.card ul {
+  padding-left: 20px;
+}
+
+.card ul li {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+button {
+  background: #e53935;
+  color: white;
+  font-size: 16px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
+  box-shadow: 0 0 20px #ff1744, 0 0 40px #d50000;
+  animation: pulse 1.5s infinite;
+}
+
+button:hover {
+  background: #c62828;
+}
+
+#sos-button.sos-active {
+  animation: sos-flash 1s infinite, pulse 1.5s infinite;
+  background: #d50000;
+}
+
+.call-link {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 24px;
+  background: #43a047;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.call-link:hover {
+  background: #2e7d32;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255,255,255,0.9);
+  font-size: 14px;
+  color: #555;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes sos-flash {
+  0%, 100% { background-color: #d50000; }
+  50% { background-color: #ff5252; }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 rgba(255, 23, 68, 0.7); }
+  50% { box-shadow: 0 0 20px rgba(255, 23, 68, 1); }
+  100% { box-shadow: 0 0 0 rgba(255, 23, 68, 0.7); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
